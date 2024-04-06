@@ -1,0 +1,54 @@
+:root{
+    ---primaryColor: #7a63f1;
+    ---secondaryColor: #ebe8fc;
+    ---textColor: hsl(0, 0%, 64%);
+    ---greyColor: #c0c0c0;
+    ---whiteColor: #f5f4f5;
+    ---blackColor: #434344;
+}
+
+.footer{
+    padding-top: 4rem;
+
+    .footerContainer{
+
+        .footerMenuDiv{
+            padding: 2rem;
+            background: var(---greyColor);
+            border-radius: 10px;
+            gap: 1.5rem;
+
+            .singleGrid{
+                .footerTitle{
+                    display: block;
+                    padding-bottom: .5rem;
+                    font-size: 16px;
+                    color: var(---blackColor);
+                    font-weight: 700;
+            }
+
+            .footerUl{
+                gap: 5px;
+
+                .footerLi{
+                    color: var(---textColor);
+                    &:hover{
+                        color: var(---blackColor);
+                        transform: translateX(5px);
+                        transition: -3s;
+                    }
+                }
+            }
+        }
+
+        .lowerSection{
+            .p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+}
+}

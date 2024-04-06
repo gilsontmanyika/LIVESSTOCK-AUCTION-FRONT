@@ -1,0 +1,27 @@
+:root {
+    ---primaryColor: #7a63f1;
+    ---secondaryColor: #ebe8fc;
+    ---textColor: #a3a3a3;
+    ---greyColor: #f4f4f4;
+    ---whiteColor: #f5f4f5;
+    ---blackColor: #434344;
+}
+
+.directions {
+    position: "fixed";
+    top: 0;
+}
+
+.dirContents {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    background-color: rgb(200, 245, 245);
+    height: calc(100vh - 2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+    flex-direction: column;
+}

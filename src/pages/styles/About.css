@@ -1,0 +1,41 @@
+:root {
+  ---secondaryColor: #ebe8fc;
+  ---textColor: #a3a3a3;
+  ---greyColor: #f4f4f4;
+  ---whiteColor: #f5f4f5;
+  ---blackColor: #434344;
+}
+
+.about {
+  position: "fixed";
+  top: 0;
+}
+
+.aboutContents {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  background-color: rgb(202, 223, 223);
+  height: calc(100vh - 2.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 85%;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+.aboutContents .para {
+  color: black;
+  font: 14px;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.footing {
+  position: bottom;
+  bottom: 0;
+  width: 85%;
+  margin: 0 auto;
+}/*# sourceMappingURL=About.css.map */

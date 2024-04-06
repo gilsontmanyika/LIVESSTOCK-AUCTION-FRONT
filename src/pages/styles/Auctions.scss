@@ -1,0 +1,77 @@
+:root {
+    ---primaryColor: #7a63f1;
+    ---secondaryColor: #ebe8fc;
+    ---textColor: #a3a3a3;
+    ---greyColor: #f4f4f4;
+    ---whiteColor: #f5f4f5;
+    ---blackColor: #434344;
+}
+
+.auctions {
+    position: "fixed";
+    top: 0;
+}
+
+.contents {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    background-color: rgb(202, 223, 223);
+    //background-image: url(../../assets/back1.jpg);
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    height: calc(100vh - 2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+    flex-direction: column;
+
+    .head {
+        font-weight: bolder;
+        font-size: 75px;
+        color: #252300;
+
+    }
+
+    .para {
+        color: black;
+    }
+
+    .options {
+
+        .optionList {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            .listItem {
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                cursor: pointer;
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:hover {
+                    background: var(---primaryColor);
+                    color: white;
+                    transition: .3s ease;
+                }
+
+                .link {
+                    color: #007bff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    background-color: transparent;
+                }
+
+                .link:hover {
+                    color: white;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+}

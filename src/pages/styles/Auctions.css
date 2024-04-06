@@ -1,0 +1,62 @@
+:root {
+  ---primaryColor: #7a63f1;
+  ---secondaryColor: #ebe8fc;
+  ---textColor: #a3a3a3;
+  ---greyColor: #f4f4f4;
+  ---whiteColor: #f5f4f5;
+  ---blackColor: #434344;
+}
+
+.auctions {
+  position: "fixed";
+  top: 0;
+}
+
+.contents {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  background-color: rgb(202, 223, 223);
+  height: calc(100vh - 2.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 85%;
+  flex-direction: column;
+}
+.contents .head {
+  font-weight: bolder;
+  font-size: 75px;
+  color: #252300;
+}
+.contents .para {
+  color: black;
+}
+.contents .options .optionList {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.contents .options .optionList .listItem {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.contents .options .optionList .listItem:hover {
+  background: var(---primaryColor);
+  color: white;
+  transition: 0.3s ease;
+}
+.contents .options .optionList .listItem .link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+.contents .options .optionList .listItem .link:hover {
+  color: white;
+  text-decoration: underline;
+}/*# sourceMappingURL=Auctions.css.map */
