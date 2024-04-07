@@ -66,7 +66,7 @@ const Navbar = () => {
 
       {isLoggedIn ? ( // Add this conditional rendering
                 <div className='signUp flex'>
-                    <FaUser/>
+                    <FaUser onClick={handleIconClick} style={{ cursor: 'pointer' }}/>
                     <Link to="/userprofile" className='text1'>MY PROFILE</Link>
                     <button onClick={handleLogout}>Sign Out</button>
                 </div>
