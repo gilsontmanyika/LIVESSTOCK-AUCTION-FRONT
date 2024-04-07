@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-
 //importing the pages
 
 
@@ -50,7 +49,7 @@ const Navbar = () => {
 
       <div className='signUp flex'>
         <a href="/signin">
-          <div className='text1'>Sign In</div>
+          <Link to="/signin" className='text1'>Sign In</Link>
         </a>
         <a href='/signup'>
           <div className='text2'>Sign Up</div>
