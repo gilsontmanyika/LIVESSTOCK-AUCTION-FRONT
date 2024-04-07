@@ -9,7 +9,7 @@ const SignIn = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('https://your-api-url.com/login', {
+            const response = await axios.post('https://127.0.0.1:8000/api/v1/auth/api-token-auth/', {
                 email,
                 password
             });
