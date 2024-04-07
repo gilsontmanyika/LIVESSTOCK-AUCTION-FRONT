@@ -11,34 +11,32 @@
   background-image: url(../../assets/back.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 2.5rem);
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
 .secContainer {
-  padding: 0 1.5rem;
   text-align: center;
-  display: grid;
-  gap: 2rem;
-}
-.secContainer .homeText .homeSpan {
-  color: var(---textColor);
-  font-weight: 400;
-  font-size: 15px;
 }
 .secContainer .homeText .homeTitle {
-  color: var(---whiteColor);
+  color: #80ffff;
+  text-shadow: 2px 2px #000000;
+  animation: colorChange 2s linear forwards;
   font-weight: bolder;
-  font-size: 15px;
-  text-shadow: #7a63f1;
+  font-size: 20px;
+}
+@keyframes colorChange {
+  100% {
+    color: #008000;
+  }
 }
 .secContainer .homeText .homePara {
-  color: black;
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.815);
+  text-shadow: 1px 1px #ff7d27;
+  font-size: 25px;
 }
 .secContainer .homeText .btns {
   gap: 1.5rem;
@@ -52,20 +50,8 @@
   font-size: 12px;
 }
 .secContainer .homeText .btns .btn:hover {
-  background: rgb(100, 78, 224);
-  color: var(---textColor);
-}
-.secContainer .homeText .btns btn:nth-child(1) {
-  background: var(---whiteColor);
-  color: var(---textColor);
-}
-.secContainer .homeText .btns btn:nth-child(1):hover {
-  background: rgb(100, 78, 224);
-  color: var(---whiteColor);
-}
-.secContainer .homeText .btns btn:nth-child(2):hover {
-  background: var(---whiteColor);
-  color: var(---textColor);
+  background: #008000;
+  color: black;
 }
 .secContainer .homeImage {
   margin: auto;

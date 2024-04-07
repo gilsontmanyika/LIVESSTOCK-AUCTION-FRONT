@@ -11,32 +11,35 @@
     position: "fixed";
     top: 0;
 }
-
-.contents {
-    margin-top: 2rem;
-    padding: 2rem 0;
+.overala{
+    padding-top: 50px;
     background-color: rgb(202, 223, 223);
+    margin: 0 auto;
+    width: 85%;
     //background-image: url(../../assets/back1.jpg);
     //background-repeat: no-repeat;
     //background-size: cover;
-    height: calc(100vh - 2.5rem);
+    
+}
+
+.contents {
+    padding-top: 5rem;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0 auto;
-    width: 85%;
     flex-direction: column;
 
     .head {
         font-weight: bolder;
-        font-size: 75px;
+        font-size: 150px;
         color: #252300;
 
     }
 
     .para {
         color: black;
+        padding-bottom: 2rem;
     }
 
     .options {

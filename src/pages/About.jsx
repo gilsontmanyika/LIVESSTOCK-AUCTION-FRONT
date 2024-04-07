@@ -8,8 +8,9 @@ const About = () => {
             <div className='about'>
                 <Navbar />
             </div>
-            <div className='aboutContents'>
-              <h1>ABOUT US</h1>
+         <div className='overal'>
+          <div className='aboutContents'>
+              <h1 className='aboutus'>ABOUT US</h1>
             <h2>Our Mission</h2>
                <p className='para'>
                 We are an online livestock auction platform specializing in cattle. 
@@ -26,6 +27,7 @@ const About = () => {
                We envision a world where every farmer has access to a global market,
                and every buyer has access to a diverse range of livestock options.
                </p>
+            </div>   
             </div>
              <div className='footing'>
                 <Footer/>

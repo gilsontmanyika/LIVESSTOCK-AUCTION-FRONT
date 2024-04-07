@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Navbar from "../Components/Navbar/Navbar"
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -28,7 +29,9 @@ const SignIn = () => {
     };
 
     return (
-        <div>
+        <>
+        <Navbar/>
+        <div className='inContents'>
             <h1>SIGN IN</h1>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -46,6 +49,7 @@ const SignIn = () => {
             <a href="/forgot-password">Forgot Password?</a>
             <a href="/register">Register</a>
         </div>
+        </>
     );
 };
 

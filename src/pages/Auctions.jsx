@@ -8,6 +8,7 @@ const Auctions = () => {
       <div className='auctions'>
         <Navbar />
       </div>
+      <div className='overala'>
       <div className='contents'>
         <h1 className='head'>
           Welcome!
@@ -29,6 +30,7 @@ const Auctions = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     </>
   )

@@ -7,6 +7,10 @@
   ---blackColor: #434344;
 }
 
+.overald {
+  padding-top: 50px;
+}
+
 .directions {
   position: "fixed";
   top: 0;
