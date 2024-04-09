@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Navbar from "../Components/Navbar/Navbar"
+//import Navbar from "../Components/Navbar/Navbar"
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const SignIn = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('https://127.0.0.1:8000/api/v1/auth/api-token-auth/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/auth/api-token-auth/', {
                 email,
                 password
             });
@@ -30,7 +30,7 @@ const SignIn = () => {
 
     return (
         <>
-        <Navbar/>
+       
         <div className='inContents'>
             <h1>SIGN IN</h1>
             <form onSubmit={handleSubmit}>
