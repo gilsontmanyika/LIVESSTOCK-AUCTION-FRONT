@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import "./styles/Logins.css";
+import Navbar from '../Components/Navbar/Navbar';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -33,9 +35,13 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+   <>
+   <div className='login-nav'>
+    <Navbar/>
+   </div>
+    <div className='log-contents'>
       <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <form className='this-form' onSubmit={handleSubmit}>
         <label>
           User Type:
           <select name="userType" onChange={handleChange}>
@@ -45,35 +51,20 @@ const SignUp = () => {
             <option value="admin">Admin</option>
           </select>
         </label>
-        <label>
-          Name:
-          <input type="text" name="name" onChange={handleChange} />
-        </label>
-        <label>
-          Surname:
-          <input type="text" name="surname" onChange={handleChange} />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" onChange={handleChange} />
-        </label>
-        <label>
-          Location:
-          <input type="text" name="location" onChange={handleChange} />
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password" onChange={handleChange} />
-        </label>
-        <label>
-          Confirm Password:
-          <input type="password" name="confirmPassword" onChange={handleChange} />
-        </label>
-        <button type="submit">Register</button>
+          <input type="text" name="name" onChange={handleChange} placeholder='Name'/>
+          <input type="text" name="surname" onChange={handleChange} placeholder='Surname' />
+          <input type="email" name="email" onChange={handleChange} placeholder='Email'/>
+          <input type="text" name="location" onChange={handleChange} placeholder='Location (City)'/>
+          <input type="password" name="password" onChange={handleChange} placeholder='Enter Password'/>
+          <input type="password" name="confirmPassword" onChange={handleChange} placeholder='Confirm Password'/>
+        <button type="submit" className='the-button'>SIGN UP</button>
       </form>
-      <Link to="/signin">Sign In</Link>
-      <Link to="/forgot-password">Forgot Password</Link>
+      <div className='low-links'>
+        <Link to="/signin">SIGN IN INSTEAD</Link>
+        <Link to="/forgot-password">FORGOT PASSWORD</Link>
+      </div>
     </div>
+   </> 
   );
 };
 

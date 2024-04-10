@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-//import Navbar from "../Components/Navbar/Navbar"
+import Navbar from "../Components/Navbar/Navbar"
+import "./styles/Logins.css";
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -30,24 +32,22 @@ const SignIn = () => {
 
     return (
         <>
-       
-        <div className='inContents'>
+       <div className='login-nav'>
+        <Navbar/>
+       </div>
+       <div className='log-contents'>
             <h1>SIGN IN</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Email:
+            <form className='this-form' onSubmit={handleSubmit}>
                     <input type="email" value={email} 
-                    onChange={e => setEmail(e.target.value)} required />
-                </label>
-                <label>
-                    Password:
+                    onChange={e => setEmail(e.target.value)} required placeholder='Email' />
                     <input type="password" value={password} 
-                    onChange={e => setPassword(e.target.value)} required />
-                </label>
-                <button type="submit">Login</button>
+                    onChange={e => setPassword(e.target.value)} required placeholder='Password' />
+                <button className='the-button' type="submit">Login</button>
             </form>
-            <a href="/forgot-password">Forgot Password?</a>
-            <a href="/register">Register</a>
+           <div className='low-links'>
+            <Link to="/forgot-password">Forgot Password?</Link>
+            <Link to="/register">Register</Link>
+           </div>
         </div>
         </>
     );

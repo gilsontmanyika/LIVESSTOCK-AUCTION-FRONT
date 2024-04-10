@@ -1,0 +1,48 @@
+.list-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 100px;
+  background-color: #f8f9fa;
+}
+
+.the-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.the-form input[type=text],
+.the-form input[type=number],
+.the-form input[type=email],
+.the-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.the-form .register {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.the-form .register:hover {
+  background-color: #0056b3;
+}
+
+.browse {
+  color: #007bff;
+  text-decoration: none;
+}
+.browse:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Listing.css.map */
