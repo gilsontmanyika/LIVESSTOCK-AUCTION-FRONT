@@ -3,9 +3,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding-top: 100px;
-    background-color: #f8f9fa;
+    padding-top: 60px;
+    background-image: url(../../assets/sunset2.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .the-title{
+      color: aqua;
+    }
   }
   
   .the-form {
@@ -14,20 +20,25 @@
     max-width: 500px;
     width: 100%;
     margin: 20px;
-    padding: 20px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    //background-color: #f8f9fa;
   
     input[type="text"],
     input[type="number"],
     input[type="email"],
+    input[type="file"],
     textarea {
       margin-bottom: 10px;
       padding: 10px;
       border-radius: 5px;
-      border: 1px solid #ced4da;
+      border: 1px solid #0381ff;
     }
-  
+    input[type="file"]
+    {
+      color: white;
+    }
     .register {
       padding: 10px;
       border: none;
@@ -35,16 +46,22 @@
       background-color: #007bff;
       color: white;
       cursor: pointer;
+      font-size: 15px;
   
       &:hover {
         background-color: #0056b3;
       }
     }
+    .labell{
+      color: aqua;
+    }
+    
   }
   
   .browse {
     color: #007bff;
     text-decoration: none;
+    align-self: center;
   
     &:hover {
       text-decoration: underline;
