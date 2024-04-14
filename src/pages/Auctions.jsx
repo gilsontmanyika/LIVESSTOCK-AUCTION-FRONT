@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Auctions = () => {
   return (
-    <>
+    <div>
       <div className='auctions'>
         <Navbar />
       </div>
@@ -20,19 +20,28 @@ const Auctions = () => {
           <ul className='optionList'>
             <li className='listItem'>
               <Link to="/listing" className='link'>
-                CREATE A NEW AUCTION
+                REGISTER YOUR CATTLE
               </Link>
             </li>
             <li className='listItem'>
               <Link to="/browsing" className='link'>
-                AVAILABLE AUCTIONS
+                BROWSE AVAILABLE AUCTIONS
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="options">
+          <ul className='optionList'>
+            <li className='listItem'>
+              <Link to="/listing" className='link'>
+                Activate an Auction instead
               </Link>
             </li>
           </ul>
         </div>
       </div>
       </div>
-    </>
+    </div>
   )
 }
 

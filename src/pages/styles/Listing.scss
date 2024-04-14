@@ -25,10 +25,11 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     //background-color: #f8f9fa;
   
-    input[type="text"],
+    input[type="string"],
     input[type="number"],
     input[type="email"],
-    input[type="file"],
+    input[type="integer"],
+    input[type="boolean"],
     textarea {
       margin-bottom: 10px;
       padding: 10px;
