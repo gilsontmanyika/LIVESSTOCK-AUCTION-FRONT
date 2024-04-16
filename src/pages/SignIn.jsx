@@ -1,36 +1,44 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Navbar from "../Components/Navbar/Navbar"
+import Navbar from "../Components/Navbar/Navbar";
 import "./styles/Logins.css";
 import { Link } from 'react-router-dom';
+import {BASE_URL} from '../services/http';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [accessToken, setAccessToken] = useState(null);
+    const [refreshToken, setRefreshToken] = useState(null);
+  
     const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/auth/api-token-auth/', {
-                email,
-                password
-            });
-
-            if (response.data.success) {
-                // Handle successful login here, e.g. redirecting to another page
-                console.log('Login successful');
-            } else {
-                // Handle error here
-                console.log('Login failed');
-            }
-        } catch (error) {
-            // Handle error here
-            console.log('An error occurred:', error);
-        }
-    };
-
-    return (
+      event.preventDefault();
+  
+      // Prepare data as a JSON object
+      const data = {
+        email,
+        password,
+      };
+  
+      try {
+        console.log(`The data is as follows : ${data}`);
+        const response = await axios.post(
+          `${BASE_URL}/auth/api-token-auth/`,
+          data, // Send data as the request body
+          {
+            headers: { 'Content-Type': 'application/json' }, // Set content type header
+          }
+        );
+  
+        console.log('Login successful:', response.data);
+        // Saving access token and refresh token
+        setAccessToken(response.data.access); 
+        setRefreshToken(response.data.refresh); 
+      } catch (error) {
+        console.error('Login failed:', error.response.data);
+        // handle how to display wrong password and email
+      }
+    };    return (
         <>
        <div className='login-nav'>
         <Navbar/>
