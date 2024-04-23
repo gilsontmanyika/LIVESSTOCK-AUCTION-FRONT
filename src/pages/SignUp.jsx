@@ -3,16 +3,20 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "./styles/Logins.css";
 import Navbar from '../Components/Navbar/Navbar';
+import {BASE_URL} from '../services/http';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    userType: '',
-    name: '',
-    surname: '',
-    email: '',
-    location: '',
-    password: '',
-    confirmPassword: ''
+    user: {
+      email: '',
+      password: ''
+    },
+    contact1: '',
+    contact2: '',
+    address1: '',
+    address2: '',
+    city: '',
+    country: ''
   });
 
   const handleChange = (e) => {
@@ -26,7 +30,11 @@ const SignUp = () => {
       return;
     }
     try {
-      await axios.post('YOUR_API_ENDPOINT', formData);
+      await axios.post(`${BASE_URL}/user-profile/users/`, formData,
+      {
+        headers: { 'Content-Type': 'application/json' }, // Set content type header
+      }
+    );
       alert('Registration successful');
     } catch (error) {
       console.error(error);
@@ -42,7 +50,7 @@ const SignUp = () => {
     <div className='log-contents'>
       <h1>Sign Up</h1>
       <form className='this-form' onSubmit={handleSubmit}>
-        <label>
+        {/*<label>
           User Type:
           <select name="userType" onChange={handleChange}>
             <option value="">Select...</option>
@@ -50,12 +58,18 @@ const SignUp = () => {
             <option value="seller">Seller</option>
             <option value="admin">Admin</option>
           </select>
-        </label>
+        </label>*/}
+          {/*
           <input type="text" name="name" onChange={handleChange} placeholder='Name'/>
-          <input type="text" name="surname" onChange={handleChange} placeholder='Surname' />
-          <input type="email" name="email" onChange={handleChange} placeholder='Email'/>
-          <input type="text" name="location" onChange={handleChange} placeholder='Location (City)'/>
-          <input type="password" name="password" onChange={handleChange} placeholder='Enter Password'/>
+          */}
+          <input type="email" name="email" onChange={handleChange} required placeholder='Email'/>
+          <input type="text" name="contact1" onChange={handleChange} required placeholder='Mobile Contact' />
+          <input type="text" name="contact2" onChange={handleChange} placeholder='Alternate Contact' />
+          <input type="text" name="address1" onChange={handleChange} required placeholder='Home Address' />
+          <input type="text" name="address2" onChange={handleChange} placeholder='Postal Address' />
+          <input type="text" name="city" onChange={handleChange} placeholder='Location (City)'/>
+          <input type="text" name="country" onChange={handleChange} placeholder='Location (Country)'/>
+          <input type="password" name="password" onChange={handleChange} required placeholder='Enter Password'/>
           <input type="password" name="confirmPassword" onChange={handleChange} placeholder='Confirm Password'/>
         <button type="submit" className='the-button'>SIGN UP</button>
       </form>
@@ -67,5 +81,4 @@ const SignUp = () => {
    </> 
   );
 };
-
 export default SignUp;

@@ -30,15 +30,17 @@ const SignIn = () => {
           }
         );
   
-        console.log('Login successful:', response.data);
+        console.log('Signin successful:', response.data);
         // Saving access token and refresh token
         setAccessToken(response.data.access); 
         setRefreshToken(response.data.refresh); 
       } catch (error) {
-        console.error('Login failed:', error.response.data);
+        console.error('Signing in  failed:', error.response.data);
         // handle how to display wrong password and email
       }
-    };    return (
+    };    
+    
+    return (
         <>
        <div className='login-nav'>
         <Navbar/>
@@ -47,7 +49,7 @@ const SignIn = () => {
             <h1>SIGN IN</h1>
             <form className='this-form' onSubmit={handleSubmit}>
                     <input type="email" value={email} 
-                    onChange={e => setEmail(e.target.value)} required placeholder='Email' />
+                    onChange={e => setEmail(e.target.value)} required placeholder='Email'/>
                     <input type="password" value={password} 
                     onChange={e => setPassword(e.target.value)} required placeholder='Password' />
                 <button className='the-button' type="submit">Login</button>
