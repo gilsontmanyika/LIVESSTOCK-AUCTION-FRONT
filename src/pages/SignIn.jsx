@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from "../Components/Navbar/Navbar";
-import "./styles/Logins.css";
+import "./styles/Signin.css";
 import { Link } from 'react-router-dom';
 import {BASE_URL} from '../services/http';
 
@@ -45,9 +45,9 @@ const SignIn = () => {
        <div className='login-nav'>
         <Navbar/>
        </div>
-       <div className='log-contents'>
+       <div className='log1-contents'>
             <h1>SIGN IN</h1>
-            <form className='this-form' onSubmit={handleSubmit}>
+            <form className='this1-form' onSubmit={handleSubmit}>
                     <input type="email" value={email} 
                     onChange={e => setEmail(e.target.value)} required placeholder='Email'/>
                     <input type="password" value={password} 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import "./styles/Logins.css";
+import "./styles/Signup.css";
 import Navbar from '../Components/Navbar/Navbar';
 import { BASE_URL } from '../services/http';
 
@@ -11,6 +11,9 @@ const SignUp = () => {
       email: '',
       password: ''
     },
+    first_name: '',
+    last_name: '',
+    national_id: '',
     contact1: '',
     contact2: '',
     address1: '',
@@ -57,7 +60,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className='login-nav'>
+      <div className='signup-nav'>
         <Navbar />
       </div>
       <div className='log-contents'>
@@ -70,6 +73,30 @@ const SignUp = () => {
             onChange={handleChange}
             required
             placeholder='Email'
+          />
+          <input
+            type="text"
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+            required
+            placeholder='First Name'
+          />
+          <input
+            type="text"
+            name="first_name"
+            value={formData.last_name}
+            onChange={handleChange}
+            required
+            placeholder='Last Name'
+          />
+          <input
+            type="text"
+            name="national_id"
+            value={formData.national_id}
+            onChange={handleChange}
+            required
+            placeholder='Your National Id'
           />
           <input
             type="text"
