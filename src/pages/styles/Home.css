@@ -22,7 +22,7 @@
   text-align: center;
 }
 .secContainer .homeText .homeTitle {
-  color: #80ffff;
+  color: #80ffdf;
   text-shadow: 2px 2px #000000;
   animation: colorChange 2s linear forwards;
   font-weight: bolder;
@@ -30,28 +30,34 @@
 }
 @keyframes colorChange {
   100% {
-    color: #008000;
+    color: #4dffd2;
   }
 }
 .secContainer .homeText .homePara {
-  color: rgba(255, 255, 255, 0.815);
-  text-shadow: 1px 1px #ff7d27;
-  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 40px;
 }
-.secContainer .homeText .btns {
+.secContainer .homeText .detail-btns {
   gap: 1.5rem;
   justify-content: center;
+  margin-top: 75px;
 }
-.secContainer .homeText .btns .btn {
+.secContainer .homeText .detail-btns .the-btn {
   padding: 10px 15px;
-  border-radius: 3px;
+  border-radius: 10px;
   font-weight: 600;
   margin-top: 0.5rem;
-  font-size: 12px;
+  font-size: 20px;
+  color: #ffffff;
 }
-.secContainer .homeText .btns .btn:hover {
-  background: #008000;
-  color: black;
+.secContainer .homeText .detail-btns .the-btn .this-icon {
+  font-size: 20px;
+  padding-right: 0.2rem;
+}
+.secContainer .homeText .detail-btns .the-btn:hover {
+  background: #09ffca;
 }
 .secContainer .homeImage {
   margin: auto;

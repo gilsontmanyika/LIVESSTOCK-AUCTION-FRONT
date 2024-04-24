@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "./styles/Logins.css";
 import Navbar from '../Components/Navbar/Navbar';
-import {BASE_URL} from '../services/http';
+import { BASE_URL } from '../services/http';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +19,35 @@ const SignUp = () => {
     country: ''
   });
 
+  const [confirmPassword, setConfirmPassword] = useState('');
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.name === 'email' || e.target.name === 'password') {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        user: { ...prevFormData.user, [e.target.name]: e.target.value }
+      }));
+    } else if (e.target.name === 'confirmPassword') {
+      setConfirmPassword(e.target.value);
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [e.target.name]: e.target.value
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.user.password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
     try {
-      await axios.post(`${BASE_URL}/user-profile/users/`, formData,
-      {
-        headers: { 'Content-Type': 'application/json' }, // Set content type header
-      }
-    );
+      console.log(formData); // This will print your formData to the console
+      await axios.post(`${BASE_URL}/user-profile/users/`, formData, {
+        headers: { 'Content-Type': 'application/json' },
+      });
       alert('Registration successful');
     } catch (error) {
       console.error(error);
@@ -43,42 +56,89 @@ const SignUp = () => {
   };
 
   return (
-   <>
-   <div className='login-nav'>
-    <Navbar/>
-   </div>
-    <div className='log-contents'>
-      <h1>Sign Up</h1>
-      <form className='this-form' onSubmit={handleSubmit}>
-        {/*<label>
-          User Type:
-          <select name="userType" onChange={handleChange}>
-            <option value="">Select...</option>
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller</option>
-            <option value="admin">Admin</option>
-          </select>
-        </label>*/}
-          {/*
-          <input type="text" name="name" onChange={handleChange} placeholder='Name'/>
-          */}
-          <input type="email" name="email" onChange={handleChange} required placeholder='Email'/>
-          <input type="text" name="contact1" onChange={handleChange} required placeholder='Mobile Contact' />
-          <input type="text" name="contact2" onChange={handleChange} placeholder='Alternate Contact' />
-          <input type="text" name="address1" onChange={handleChange} required placeholder='Home Address' />
-          <input type="text" name="address2" onChange={handleChange} placeholder='Postal Address' />
-          <input type="text" name="city" onChange={handleChange} placeholder='Location (City)'/>
-          <input type="text" name="country" onChange={handleChange} placeholder='Location (Country)'/>
-          <input type="password" name="password" onChange={handleChange} required placeholder='Enter Password'/>
-          <input type="password" name="confirmPassword" onChange={handleChange} placeholder='Confirm Password'/>
-        <button type="submit" className='the-button'>SIGN UP</button>
-      </form>
-      <div className='low-links'>
-        <Link to="/signin">SIGN IN INSTEAD</Link>
-        <Link to="/forgot-password">FORGOT PASSWORD</Link>
+    <>
+      <div className='login-nav'>
+        <Navbar />
       </div>
-    </div>
-   </> 
+      <div className='log-contents'>
+        <h1>Sign Up</h1>
+        <form className='this-form' onSubmit={handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            value={formData.user.email}
+            onChange={handleChange}
+            required
+            placeholder='Email'
+          />
+          <input
+            type="text"
+            name="contact1"
+            value={formData.contact1}
+            onChange={handleChange}
+            required
+            placeholder='Mobile Contact'
+          />
+          <input
+            type="text"
+            name="contact2"
+            value={formData.contact2}
+            onChange={handleChange}
+            placeholder='Alternate Contact'
+          />
+          <input
+            type="text"
+            name="address1"
+            value={formData.address1}
+            onChange={handleChange}
+            required
+            placeholder='Home Address'
+          />
+          <input
+            type="text"
+            name="address2"
+            value={formData.address2}
+            onChange={handleChange}
+            placeholder='Postal Address'
+          />
+          <input
+            type="text"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            placeholder='Location (City)'
+          />
+          <input
+            type="text"
+            name="country"
+            value={formData.country}
+            onChange={handleChange}
+            placeholder='Location (Country)'
+          />
+          <input
+            type="password"
+            name="password"
+            value={formData.user.password}
+            onChange={handleChange}
+            required
+            placeholder='Enter Password'
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={handleChange}
+            placeholder='Confirm Password'
+          />
+          <button type="submit" className='the-button'>SIGN UP</button>
+        </form>
+        <div className='low-links'>
+          <Link to="/signin">SIGN IN INSTEAD</Link>
+          <Link to="/forgot-password">FORGOT PASSWORD</Link>
+        </div>
+      </div>
+    </>
   );
 };
+
 export default SignUp;

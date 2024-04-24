@@ -25,13 +25,13 @@
     .homeText {
 
         .homeTitle {
-            color: #80ffff;
+            color: #80ffdf;
             text-shadow: 2px 2px #000000;
             animation: colorChange 2s linear forwards;
 
     @keyframes colorChange {
         100% {
-            color: #008000;
+            color: #4dffd2;
         }
     }
             font-weight: bolder;
@@ -40,27 +40,36 @@
         }
 
         .homePara {
-            color: rgba(255, 255, 255, 0.815);
-            text-shadow: 1px 1px #ff7d27;
-            font-size: 25px;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            font-weight: bolder;
+            margin-top: 40px;
         }
 
-        .btns {
+        .detail-btns {
             gap: 1.5rem;
             justify-content: center;
+            margin-top: 75px;
 
-            .btn {
+            .the-btn {
                 padding: 10px 15px;
-                border-radius: 3px;
+                border-radius: 10px;
                 font-weight: 600;
                 margin-top: .5rem;
-                font-size: 12px;
+                font-size: 20px;
+                color: #ffffff;
+
+                .this-icon{
+                    font-size: 20px;
+                    padding-right: .2rem;
+    
+                }
 
                 &:hover {
-                    background: #008000;
-                    color: black;
+                    background: #09ffca;
                 }
             }
+            
 
         }
     }

@@ -1,4 +1,3 @@
-import React from 'react'
 import './Search.css'
 
 //import icons
@@ -15,7 +14,7 @@ const Search = () => {
 
 
           <div className="searchDiv grid">
-            <input type="text" placeholder='Breed' />
+            <input type="text" placeholder='Breed'/>
             <input type="number" placeholder='Age' />
             <input type="text" placeholder='Sex' />
             <input type="text" placeholder='Location' />

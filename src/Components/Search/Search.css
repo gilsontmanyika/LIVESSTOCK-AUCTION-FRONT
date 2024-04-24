@@ -50,6 +50,7 @@
   width: 100%;
   align-self: center;
   gap: 0.3rem;
+  align-self: center;
 }
 .search .searchDiv .btn .icon {
   font-size: 15px;
