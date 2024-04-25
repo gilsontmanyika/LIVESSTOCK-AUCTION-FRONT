@@ -6,6 +6,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import { BASE_URL } from '../services/http';
 
 const SignUp = () => {
+
   const [formData, setFormData] = useState({
     user: {
       email: '',
@@ -64,16 +65,8 @@ const SignUp = () => {
         <Navbar />
       </div>
       <div className='log-contents'>
-        <h1>Sign Up</h1>
+        <h1 className='title1'>Sign Up</h1>
         <form className='this-form' onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            value={formData.user.email}
-            onChange={handleChange}
-            required
-            placeholder='Email'
-          />
           <input
             type="text"
             name="first_name"
@@ -84,11 +77,19 @@ const SignUp = () => {
           />
           <input
             type="text"
-            name="first_name"
+            name="last_name"
             value={formData.last_name}
             onChange={handleChange}
             required
             placeholder='Last Name'
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.user.email}
+            onChange={handleChange}
+            required
+            placeholder='Email'
           />
           <input
             type="text"
@@ -96,7 +97,7 @@ const SignUp = () => {
             value={formData.national_id}
             onChange={handleChange}
             required
-            placeholder='Your National Id'
+            placeholder='Your National Id (63-2159149 J71)'
           />
           <input
             type="text"
@@ -158,11 +159,11 @@ const SignUp = () => {
             placeholder='Confirm Password'
           />
           <button type="submit" className='the-button'>SIGN UP</button>
+          <div className='low-links1'>
+            <Link to="/signin">SIGN IN INSTEAD</Link>
+            <Link to="/forgot-password">FORGOT PASSWORD</Link>
+          </div>
         </form>
-        <div className='low-links'>
-          <Link to="/signin">SIGN IN INSTEAD</Link>
-          <Link to="/forgot-password">FORGOT PASSWORD</Link>
-        </div>
       </div>
     </>
   );
